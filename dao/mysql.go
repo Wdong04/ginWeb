@@ -11,11 +11,11 @@ var (
 )
 
 // InitMySQL 连接MySQL
-func InitMySQL() (err error) {
+func InitMySQL() {
 	dsn := "root:mysql123@tcp(localhost:3306)/bubble?charset=utf8mb4&parseTime=True&loc=Local"
+	var err error
 	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
-		return err
+		panic(err)
 	}
-	return nil
 }
