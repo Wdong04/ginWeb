@@ -41,7 +41,7 @@ func UpdateTodoByID(c *gin.Context) {
 		return
 	}
 	c.BindJSON(&todo)
-	if err := models.UpdateTodo(todo); err != nil {
+	if err := models.UpdateTodo(&todo); err != nil {
 		c.JSON(http.StatusOK, gin.H{"error": err.Error()})
 		return
 	}

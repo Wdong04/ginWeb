@@ -19,13 +19,13 @@ func CreateTodo(todo *Todo) (err error) {
 
 // GetTodo 获取待办事项
 func GetTodo() (todoList []Todo, err error) {
-	err = dao.DB.Find(todoList).Error
+	err = dao.DB.Find(&todoList).Error
 	return todoList, err
 }
 
 // GetTodoByID 根据ID获取待办事项
-func GetTodoByID(id string) (todo *Todo, err error) {
-	err = dao.DB.Where("id=?", id).First(todo).Error
+func GetTodoByID(id string) (todo Todo, err error) {
+	err = dao.DB.Where("id=?", id).First(&todo).Error
 	return todo, err
 }
 
