@@ -1,8 +1,9 @@
 package routers
 
 import (
-	"gin_demo/todo"
 	"net/http"
+
+	"github.com/Wdong04/ginWeb/controllers"
 
 	"github.com/gin-gonic/gin"
 )
@@ -21,10 +22,10 @@ func SetupRouters() *gin.Engine {
 	})
 	v1Group := r.Group("v1")
 	{
-		v1Group.POST("/todo", todo.CreateTodo)
-		v1Group.GET("/todo", todo.GetTodo)
-		v1Group.PUT("/todo/:id", todo.UpdateTodoByID)
-		v1Group.DELETE("/todo/:id", todo.DeleteTodoByID)
+		v1Group.POST("/todo", controllers.CreateTodo)
+		v1Group.GET("/todo", controllers.GetTodo)
+		v1Group.PUT("/todo/:id", controllers.UpdateTodoByID)
+		v1Group.DELETE("/todo/:id", controllers.DeleteTodoByID)
 	}
 	return r
 }

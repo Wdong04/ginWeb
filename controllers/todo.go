@@ -1,8 +1,9 @@
-package todo
+package controllers
 
 import (
-	"gin_demo/models"
 	"net/http"
+
+	"github.com/Wdong04/ginWeb/models"
 
 	"github.com/gin-gonic/gin"
 )

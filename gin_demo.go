@@ -1,9 +1,9 @@
 package main
 
 import (
-	"gin_demo/dao"
-	"gin_demo/models"
-	"gin_demo/routers"
+	"github.com/Wdong04/ginWeb/dao"
+	"github.com/Wdong04/ginWeb/models"
+	"github.com/Wdong04/ginWeb/routers"
 )
 
 func main() {

@@ -1,6 +1,6 @@
 package models
 
-import "gin_demo/dao"
+import "github.com/Wdong04/ginWeb/dao"
 
 // Todo Model
 type Todo struct {
