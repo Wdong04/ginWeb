@@ -1,6 +1,10 @@
 package models
 
-import "github.com/Wdong04/ginWeb/dao"
+import (
+	"fmt"
+
+	"github.com/Wdong04/ginWeb/dao"
+)
 
 // Todo Model
 type Todo struct {
@@ -17,6 +21,7 @@ func CreateTodo(todo *Todo) (err error) {
 
 // GetTodo 获取待办事项
 func GetTodo() (todoList []*Todo, err error) {
+	fmt.Println("--------")
 	err = dao.DB.Find(todoList).Error
 	return todoList, err
 }
