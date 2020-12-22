@@ -1,8 +1,6 @@
 package models
 
 import (
-	"fmt"
-
 	"github.com/Wdong04/ginWeb/dao"
 )
 
@@ -20,8 +18,7 @@ func CreateTodo(todo *Todo) (err error) {
 }
 
 // GetTodo 获取待办事项
-func GetTodo() (todoList []*Todo, err error) {
-	fmt.Println("--------")
+func GetTodo() (todoList []Todo, err error) {
 	err = dao.DB.Find(todoList).Error
 	return todoList, err
 }
